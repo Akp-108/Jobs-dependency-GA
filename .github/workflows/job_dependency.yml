@@ -1,0 +1,15 @@
+name: job dependency
+
+on: 
+  push:
+    branches: ["main","master"]
+  
+  workflow_dispatch:
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v3
+     - name: Run a one-line script
+        run: echo this is first job
