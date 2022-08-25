@@ -1,15 +1,42 @@
-name: job dependency
+# name: job dependency
 
-on: 
+# on: 
+#   push:
+#     branches: ["main","master"]
+  
+#   workflow_dispatch:
+
+# jobs:
+#   first:
+#     runs-on: ubuntu-latest
+#     steps:
+#      - uses: actions/checkout@v3
+
+#      - name: Run a one-line script
+#       run: echo this is first job
+
+
+name: This is manual run 
+
+on:
   push:
-    branches: ["main","master"]
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master"]
   
   workflow_dispatch:
 
 jobs:
-  first:
-    runs-on: ubuntu-latest
+  job1:
+    runs-on: ubantu-latest
+
     steps:
-     - uses: actions/checkout@v3
-     - name: Run a one-line script
-     - run: echo this is first job
+      - uses: actions/checkout@v3
+        
+      - name: Run a one-line script
+        run: echo this is the one line script
+      
+      - name: Run a multi-line script
+        run: |
+          echo this is first line of script
+          echo this is the second line of script
