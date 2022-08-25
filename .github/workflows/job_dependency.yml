@@ -26,7 +26,7 @@ jobs:
        run: echo this is second job
 
   third:
-    needs: first
+    needs: second
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v3
